@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.springframework.org/schema/beans">
+
+<!-- DI with primitive data Collection: -->
+
+
+
+<bean class="com.reetu.beans.Book1" id="book1">
+
+<property value="Java Core" name="name"/>
+
+<property value="240" name="price"/>
+
+
+<property name="author">
+
+
+<list>
+
+<value>Reetu Chauhan</value>
+
+<value>9898989898</value>
+
+<value>56</value>
+
+<value>tanu Chauhan</value>
+
+<value>7897897897</value>
+
+<value>26</value>
+
+</list>
+
+</property>
+
+</bean>
+<!-- DI with Object data Collection: -->
+
+
+
+<bean class="com.reetu.beans.Author" id="author1">
+
+<property value="Reetu Chauhan" name="name"/>
+
+<property value="9898989898" name="phone"/>
+
+<property value="20" name="age"/>
+
+</bean>
+
+
+<bean class="com.reetu.beans.Author" id="author2">
+
+<property value="Rajan Chauhan" name="name"/>
+
+<property value="7878787878" name="phone"/>
+
+<property value="25" name="age"/>
+
+</bean>
+
+
+<bean class="com.reetu.beans.Book2" id="book2">
+
+<property value="Java Core" name="name"/>
+
+<property value="240" name="price"/>
+
+
+<property name="author">
+
+
+<list>
+
+<ref bean="author1"/>
+
+<ref bean="author2"/>
+
+</list>
+
+</property>
+
+</bean>
+
+<!-- DI with Map Collection: -->
+
+
+
+<bean class="com.reetu.beans.Book3" id="book3">
+
+<property value="Java Core" name="name"/>
+
+<property value="240" name="price"/>
+
+
+<property name="author">
+
+
+<map>
+
+<entry value="Reetu Chauhan" key="name"/>
+
+<entry value="9898989898" key="phone"/>
+
+<entry value="22" key="age"/>
+
+</map>
+
+</property>
+
+</bean>
+
+</beans>
